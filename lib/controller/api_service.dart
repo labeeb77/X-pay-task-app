@@ -19,11 +19,9 @@ Future<List<User>> fetchResults(BuildContext context) async {
   if (response.statusCode == 200) {
     final Map<String, dynamic> responseData = json.decode(response.body);
 
-    // Check if the "users" property exists in the response data
     if (responseData.containsKey('users')) {
       final List<dynamic> data = responseData['users'];
 
-      // Convert the JSON data to a list of User objects
       List<User> users = data.map((json) => User.fromJson(json)).toList();
 // log(users.toString());
       return users;
@@ -35,9 +33,8 @@ Future<List<User>> fetchResults(BuildContext context) async {
   }
 }
 
-
 Future<UserDetailsModel?> fetchUserDetails(int userId) async {
-  final baseUrl = "https://dummyjson.com/users/$userId"; // Use the correct API endpoint for a specific user
+  final baseUrl = "https://dummyjson.com/users/$userId";
 
   final response = await http.get(Uri.parse(baseUrl));
 
@@ -45,9 +42,7 @@ Future<UserDetailsModel?> fetchUserDetails(int userId) async {
     final Map<String, dynamic> responseData = json.decode(response.body);
     // log(response.body.toString());
     return UserDetailsModel.fromJson(responseData);
-    
   } else {
     throw Exception('Failed to fetch user details');
   }
 }
-

@@ -1,13 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:xpay_task/controller/api_service.dart';
 import 'package:xpay_task/view/details_page.dart';
 import 'package:xpay_task/view/widgets/pagination_widget.dart';
-
-import '../controller/user_provider.dart';
 import '../model/user_details.dart';
 import '../model/user_model.dart';
 
@@ -16,8 +12,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home screen'),
@@ -96,7 +90,6 @@ class HomePage extends StatelessWidget {
                 },
               ),
               paginatonWidget(context)
-             
             ],
           ),
         ),

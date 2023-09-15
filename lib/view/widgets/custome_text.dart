@@ -4,7 +4,8 @@ class CustomText extends StatelessWidget {
   final String text;
   final TextStyle style;
 
-  const CustomText({super.key, 
+  const CustomText({
+    super.key,
     required this.text,
     this.style = const TextStyle(fontSize: 16),
   });
